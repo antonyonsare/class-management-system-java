@@ -33,19 +33,6 @@ access and without a browser. The full reasoning — including why Java was chos
 - No external libraries or build tools required
 - POSIX shell for the provided Unix scripts; Windows batch for Windows users
 
-## Quick start
-
-Windows (CMD / PowerShell):
-```bat
-compile.bat          # compiles all sources into out/
-run.bat --demo       # compiles (first time) then runs with demo data
-```
-
-Linux / macOS:
-```bash
-./compile.sh
-./run.sh --demo
-```
 
 Manual compile & run (any platform with JDK):
 ```bash
@@ -54,14 +41,6 @@ javac -encoding UTF-8 -d out $(find src -name "*.java")
 
 # run the app (class path = out)
 java -cp out com.cdb.cms.Main --demo
-```
-
-If you prefer a single runnable JAR (optional):
-```bash
-# from project root
-jar --create --file cdb-cms.jar -C out .
-# then run
-java -cp cdb-cms.jar com.cdb.cms.Main --demo
 ```
 
 ## Demo mode
@@ -136,13 +115,3 @@ Add a CONTRIBUTING.md with specifics such as:
 - Commit message style (conventional commits)
 - How to add a Firestore/local DB adapter (refer to docs/developer-guide.md)
 - How to run any tests (future)
-
-## License & Contact
-If you don't already, add a LICENSE file (MIT/Apache/BSD recommended). Update the badge at the top to link to that file.
-
-Maintainer: Antony On­sare (@antonyonsare) — open issues or PRs on this repository.
-
-## Troubleshooting / FAQ
-- "javac: command not found": ensure JDK is installed and JAVA_HOME is set.
-- Encoding / weird characters: make sure README.md is saved as UTF-8 without BOM.
-- Windows scripts not executable: run them from CMD or PowerShell; ensure line endings are CRLF for batch, LF for sh scripts.
